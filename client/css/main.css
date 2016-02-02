@@ -5,3 +5,11 @@
 h1 {
   font-weight: 900;
 }
+
+.navbar {
+  margin-top: 20px;
+}
+
+.navbar-brand {
+  font-weight: 900;
+}
