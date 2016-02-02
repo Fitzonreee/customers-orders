@@ -1,6 +1,5 @@
 var myApp = angular.module('myApp', ['ngRoute', 'ui.bootstrap']);
 
-// Is ngRoute installed???
 // Client Side Routing
 myApp.config(function($routeProvider){
   $routeProvider
@@ -8,3 +7,7 @@ myApp.config(function($routeProvider){
   .when('/orders', {templateUrl: 'partials/orders.html'})
   .otherwise({redirectTo: '/'});
 });
+
+// Factories
+
+// Client Controllers

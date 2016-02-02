@@ -1,3 +1,7 @@
+/*************************
+		Global
+*************************/
+
 * {
  font-family: 'Roboto', sans-serif;
 }
@@ -6,10 +10,46 @@ h1 {
   font-weight: 900;
 }
 
+/*************************
+		Index page
+*************************/
+
 .navbar {
   margin-top: 20px;
 }
 
 .navbar-brand {
-  font-weight: 900;
+  text-transform: uppercase;
+}
+
+/*************************
+		partials
+*************************/
+
+.title {
+  background-color: rgba(199, 199, 199, 0.25);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.space {
+  margin-top: 20px;
+}
+
+/*************************
+		unorganized
+*************************/
+
+.delete-btn button {
+  display: block;
+  margin: 0 auto !important;
+}
+
+i {
+  margin-right: 10px;
+  font-size: 50px;
+}
+
+.fa-user, .fa-archive {
+  margin-left: 10px;
 }

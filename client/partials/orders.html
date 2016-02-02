@@ -1,29 +1,55 @@
 <div>
-  <h1>Orders</h1>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Email</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
-      </tr>
-      <tr>
-        <td>Mary</td>
-        <td>Moe</td>
-        <td>mary@example.com</td>
-      </tr>
-      <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>july@example.com</td>
-      </tr>
-    </tbody>
-  </table>
+  <h1 class="title">Orders</h1>
+  <div class="row">
+    <div class="col-md-4">
+      <h4 class="title"><i class="fa fa-archive"></i>Add a new order:</h4>
+      <form role="form">
+          <div class="form-group">
+            <label for="sel1">Select Customer:</label>
+            <select class="form-control" id="sel1">
+              <option>Kevin</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="sel1">Item:</label>
+            <select class="form-control" id="sel1">
+              <option>Nike cleats</option>
+              <option>Adidas cleats</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="sel1">Quantity:</label>
+            <select class="form-control" id="sel1">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+          </div>
+        <button type="submit" class="btn btn-success pull-right"><i class="fa fa-plus-circle"></i>Create Order</button>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-bordered table-striped space">
+        <thead>
+          <tr>
+            <th>Customer Name</th>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>John</td>
+            <td>Doe</td>
+            <td>john@example.com</td>
+            <td>Date</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
