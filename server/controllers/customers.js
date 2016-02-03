@@ -10,7 +10,17 @@ module.exports = (function(){
           console.log(err);
           console.log('\nError saving new customer!');
         } else {
-          res.json(data);
+          res.redirect('/get_customers');
+        }
+      })
+    },
+    show: function(req, res){
+      Customer.find({}, function(err, customers){
+        if (err) {
+          console.log(err);
+          console.log('\nError showing all customers!');
+        } else {
+          res.json(customers);
         }
       })
     }

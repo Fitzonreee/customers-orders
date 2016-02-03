@@ -18,6 +18,12 @@ myApp.factory('CustomersFactory', function($http){
     })
   };
 
+  factory.get_all = function(callback){
+    $http.get('/get_customers').success(function(output){
+      callback(output);
+    })
+  };
+
   return factory;
 });
 
@@ -30,7 +36,8 @@ myApp.controller('CustomersController', function($scope, CustomersFactory){
                       };
     // console.log(customer_repack);
     CustomersFactory.create_customer(customer_repack, function(data){
-      console.log("success!");
+      console.log("Returned with data!");
+      console.log(data);
     })
   }
 });
