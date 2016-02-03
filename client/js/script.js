@@ -36,8 +36,11 @@ myApp.controller('CustomersController', function($scope, CustomersFactory){
                       };
     // console.log(customer_repack);
     CustomersFactory.create_customer(customer_repack, function(data){
-      console.log("Returned with data!");
-      console.log(data);
+      $scope.customers = data;
     })
   }
+
+  CustomersFactory.get_all(function(data){
+    $scope.customers = data;
+  })
 });

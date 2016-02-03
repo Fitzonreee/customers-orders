@@ -21,23 +21,9 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>John</td>
-            <td>Doe</td>
-            <td class="delete-btn">
-              <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i>Delete</button>
-            </td>
-          </tr>
-          <tr>
-            <td>Mary</td>
-            <td>Moe</td>
-            <td class="delete-btn">
-              <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i>Delete</button>
-            </td>
-          </tr>
-          <tr>
-            <td>July</td>
-            <td>Dooley</td>
+          <tr ng-repeat='customer in customers | filter:filter_name | orderBy: created_at'>
+            <td ng-bind='customer.name'></td>
+            <td ng-bind='customer.created_at | date: "longDate"'></td>
             <td class="delete-btn">
               <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i>Delete</button>
             </td>

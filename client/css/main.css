@@ -53,3 +53,7 @@ i {
 .col-md-8 {
   margin-top: -10px;
 }
+
+table td {
+  vertical-align: middle !important;
+}
