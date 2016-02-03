@@ -13,10 +13,9 @@ myApp.factory('CustomersFactory', function($http){
   var factory = {};
 
   factory.create_customer = function(info, callback){
-    console.log(info);
-    // $http.post('/add_customer').success(function(output){
-    //   callback(output);
-    // })
+    $http.post('/create_customer', info).success(function(output){
+      callback(output);
+    })
   };
 
   return factory;
