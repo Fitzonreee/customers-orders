@@ -57,14 +57,21 @@ myApp.factory('OrdersFactory', function($http){
     callback(quantity);
   }
 
+  factory.add_order = function(info, callback){
+    $http.post('/create_order', info).success(function(data){
+      callback(data);
+    })
+  }
+
   return factory;
+
 })
 
 // Client Controllers
 myApp.controller('CustomersController', function($scope, CustomersFactory, OrdersFactory){
   $scope.addCustomer = function(){
     // console.log($scope.new_customer);
-    customer_repack = { name: $scope.new_customer.name,
+    var customer_repack = { name: $scope.new_customer.name,
                         created_at: new Date()
                       };
     // console.log(customer_repack);
@@ -102,7 +109,16 @@ myApp.controller('OrdersController', function($scope, CustomersFactory, OrdersFa
   });
 
   $scope.addOrder = function(){
-    console.log($scope.new_order);
+    var order_repack = {
+                      customer_name: $scope.new_order.customer_name,
+                      product: $scope.new_order.product,
+                      quantity: $scope.new_order.quantity,
+                      created_at: new Date()
+                    };
+
+    OrdersFactory.add_order(order_repack, function(data){
+      $scope.orders = data;
+    })
     // clears form after saving record
     $scope.order_form.$setPristine();
     $scope.new_order.customer_name = null;

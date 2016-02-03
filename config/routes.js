@@ -1,4 +1,6 @@
-var customers = require('../server/controllers/customers.js')
+var customers = require('../server/controllers/customers.js');
+var orders = require('../server/controllers/orders.js');
+
 
 module.exports = function(app){
   app.post('/create_customer', function(req, res){
@@ -9,5 +11,8 @@ module.exports = function(app){
   })
   app.post('/delete_customer', function(req, res){
     customers.remove(req, res);
+  })
+  app.post('/create_order', function(req, res){
+    orders.add(req, res);
   })
 }
