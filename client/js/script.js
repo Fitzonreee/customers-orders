@@ -43,6 +43,9 @@ myApp.controller('CustomersController', function($scope, CustomersFactory){
     // console.log(customer_repack);
     CustomersFactory.create_customer(customer_repack, function(data){
       $scope.customers = data;
+      // clears form after saving record
+      $scope.form.$setPristine();
+      $scope.new_customer.name = null;
     })
   }
 

@@ -3,10 +3,10 @@
   <div class="row">
     <div class="col-md-4">
       <h4 class="title"><i class="fa fa-user"></i>Add a new customer:</h4>
-      <form role="form">
+      <form role="form" name="form">
         <div class="form-group">
           <label for="text">Customer Name:</label>
-          <input type="text" class="form-control" ng-model='new_customer.name'>
+          <input type="text" class="form-control" ng-model='new_customer.name' name="input">
         </div>
         <input type="submit" class="btn btn-success pull-right" value="Create Customer" ng-click='addCustomer()'>
       </form>
