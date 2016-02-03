@@ -25,7 +25,7 @@
             <td ng-bind='customer.name'></td>
             <td ng-bind='customer.created_at | date: "longDate"'></td>
             <td class="delete-btn">
-              <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i>Delete</button>
+              <button ng-click='deleteCustomer(customer)' class="btn btn-sm btn-danger"><i class="fa fa-trash"></i>Delete</button>
             </td>
           </tr>
         </tbody>

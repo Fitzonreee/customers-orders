@@ -7,4 +7,7 @@ module.exports = function(app){
   app.get('/get_customers', function(req, res){
     customers.show(req, res);
   })
+  app.post('/delete_customer', function(req, res){
+    customers.remove(req, res);
+  })
 }

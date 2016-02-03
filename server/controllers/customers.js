@@ -23,6 +23,17 @@ module.exports = (function(){
           res.json(customers);
         }
       })
+    },
+    remove: function(req, res){
+      console.log(req.body._id);
+      Customer.remove({_id: req.body._id}, function(err, data){
+        if (err) {
+          console.log(err);
+          console.log('\nError removing customer!');
+        } else {
+          res.redirect('/get_customers');
+        }
+      })
     }
   }
 })();

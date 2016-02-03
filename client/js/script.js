@@ -24,6 +24,12 @@ myApp.factory('CustomersFactory', function($http){
     })
   };
 
+  factory.delete_customer = function(info, callback){
+    $http.post('/delete_customer', info).success(function(output){
+      callback(output);
+    })
+  };
+
   return factory;
 });
 
@@ -36,6 +42,12 @@ myApp.controller('CustomersController', function($scope, CustomersFactory){
                       };
     // console.log(customer_repack);
     CustomersFactory.create_customer(customer_repack, function(data){
+      $scope.customers = data;
+    })
+  }
+
+  $scope.deleteCustomer = function(customer){
+    CustomersFactory.delete_customer(customer, function(data){
       $scope.customers = data;
     })
   }
