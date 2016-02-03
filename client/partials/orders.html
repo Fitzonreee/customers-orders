@@ -6,13 +6,13 @@
       <form role="form">
           <div class="form-group">
             <label for="sel1">Select Customer:</label>
-            <select class="form-control" id="sel1" ng-options='customer.name for customer in customers' ng-model='new_order.customer_name'>
+            <select class="form-control" id="sel1" ng-options='customer.name as customer.name for customer in customers' ng-model='new_order.customer_name'>
               <option value="" disabled>Choose a Customer</option>
             </select>
           </div>
           <div class="form-group">
             <label for="sel1">Item:</label>
-            <select class="form-control" id="sel1" ng-options='product.product for product in products' ng-model='new_order.product'>
+            <select class="form-control" id="sel1" ng-options='product.product as product.product for product in products' ng-model='new_order.product'>
               <option value='' disabled>Choose a Product</option>
             </select>
           </div>
@@ -22,7 +22,7 @@
               <option selected='selected' ng-repeat='i in quantity' value='{{ i }}'>{{ i }}</option>
             </select>
           </div>
-          <input type="submit" class="btn btn-success pull-right" value="Create Order" ng-click=''>
+          <input type="submit" class="btn btn-success pull-right" value="Create Order" ng-click='addOrder()'>
       </form>
     </div>
     <div class="col-md-8">

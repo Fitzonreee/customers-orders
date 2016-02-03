@@ -99,6 +99,10 @@ myApp.controller('OrdersController', function($scope, CustomersFactory, OrdersFa
 
   OrdersFactory.get_quantity(function(data){
     $scope.quantity = data;
-  })
+  });
+
+  $scope.addOrder = function(){
+    console.log($scope.new_order);
+  }
 
 });
