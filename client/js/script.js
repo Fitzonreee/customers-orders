@@ -103,6 +103,11 @@ myApp.controller('OrdersController', function($scope, CustomersFactory, OrdersFa
 
   $scope.addOrder = function(){
     console.log($scope.new_order);
+    // clears form after saving record
+    $scope.order_form.$setPristine();
+    $scope.new_order.customer_name = null;
+    $scope.new_order.product = null;
+    $scope.new_order.quantity = null;
   }
 
 });

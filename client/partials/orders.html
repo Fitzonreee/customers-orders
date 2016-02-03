@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-md-4">
       <h4 class="title"><i class="fa fa-archive"></i>Add a new order:</h4>
-      <form role="form">
+      <form role="form" name="order_form">
           <div class="form-group">
             <label for="sel1">Select Customer:</label>
             <select class="form-control" id="sel1" ng-options='customer.name as customer.name for customer in customers' ng-model='new_order.customer_name'>
@@ -19,7 +19,7 @@
           <div class="form-group">
             <label for="sel1">Quantity:</label>
             <select class="form-control" id="sel1"  ng-model='new_order.quantity'>
-              <option selected='selected' ng-repeat='i in quantity' value='{{ i }}'>{{ i }}</option>
+              <option ng-repeat='i in quantity' value='{{ i }}'>{{ i }}</option>
             </select>
           </div>
           <input type="submit" class="btn btn-success pull-right" value="Create Order" ng-click='addOrder()'>
