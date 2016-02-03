@@ -33,8 +33,35 @@ myApp.factory('CustomersFactory', function($http){
   return factory;
 });
 
+myApp.factory('OrdersFactory', function($http){
+  var factory = {};
+
+  factory.get_products = function(callback){
+    var products = [
+                    {product: "Nike Cleats"},
+                    {product: "Adidas Cleats"},
+                    {product: "Diadora Cleats"},
+                    {product: "Puma Cleats"},
+                    {product: "Kelme Cleats"},
+                   ];
+    callback(products);
+  }
+
+  factory.get_quantity = function(callback){
+    var quantity = [];
+
+    for (var i = 1; i < 11; i++) {
+      quantity.push(i);
+    };
+
+    callback(quantity);
+  }
+
+  return factory;
+})
+
 // Client Controllers
-myApp.controller('CustomersController', function($scope, CustomersFactory){
+myApp.controller('CustomersController', function($scope, CustomersFactory, OrdersFactory){
   $scope.addCustomer = function(){
     // console.log($scope.new_customer);
     customer_repack = { name: $scope.new_customer.name,
@@ -60,8 +87,18 @@ myApp.controller('CustomersController', function($scope, CustomersFactory){
   })
 });
 
-myApp.controller('OrdersController', function($scope, CustomersFactory){
+myApp.controller('OrdersController', function($scope, CustomersFactory, OrdersFactory){
+
   CustomersFactory.get_all(function(data){
     $scope.customers = data;
+  });
+
+  OrdersFactory.get_products(function(data){
+    $scope.products = data;
+  });
+
+  OrdersFactory.get_quantity(function(data){
+    $scope.quantity = data;
   })
+
 });
