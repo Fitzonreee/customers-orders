@@ -15,4 +15,7 @@ module.exports = function(app){
   app.post('/create_order', function(req, res){
     orders.add(req, res);
   })
+  app.get('/get_orders', function(req, res){
+    orders.show(req, res);
+  })
 }

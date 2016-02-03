@@ -63,6 +63,12 @@ myApp.factory('OrdersFactory', function($http){
     })
   }
 
+  factory.get_orders = function(callback){
+    $http.get('/get_orders').success(function(data){
+      callback(data);
+    })
+  }
+
   return factory;
 
 })
@@ -108,6 +114,10 @@ myApp.controller('OrdersController', function($scope, CustomersFactory, OrdersFa
     $scope.quantity = data;
   });
 
+  OrdersFactory.get_orders(function(data){
+    $scope.orders = data;
+  })
+
   $scope.addOrder = function(){
     var order_repack = {
                       customer_name: $scope.new_order.customer_name,
@@ -118,6 +128,7 @@ myApp.controller('OrdersController', function($scope, CustomersFactory, OrdersFa
 
     OrdersFactory.add_order(order_repack, function(data){
       $scope.orders = data;
+      console.log(data);
     })
     // clears form after saving record
     $scope.order_form.$setPristine();
