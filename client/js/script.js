@@ -59,3 +59,9 @@ myApp.controller('CustomersController', function($scope, CustomersFactory){
     $scope.customers = data;
   })
 });
+
+myApp.controller('OrdersController', function($scope, CustomersFactory){
+  CustomersFactory.get_all(function(data){
+    $scope.customers = data;
+  })
+});
