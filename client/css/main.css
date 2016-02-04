@@ -38,10 +38,6 @@ table tr td, table th {
   background-color: rgb(218, 218, 218);
   padding: 20px;
   border-radius: 10px;
-
-  -webkit-box-shadow: 0 8px 6px -6px black;
-     -moz-box-shadow: 0 8px 6px -6px black;
-          box-shadow: 0 8px 6px -6px black;
 }
 
 .space {
@@ -52,10 +48,6 @@ label {
   background-color: rgb(218, 218, 218);
   padding: 5px 10px;
   border-radius: 5px;
-
-  -webkit-box-shadow: 0 8px 6px -6px black;
-     -moz-box-shadow: 0 8px 6px -6px black;
-          box-shadow: 0 8px 6px -6px black;
 }
 
 /*************************
@@ -78,10 +70,4 @@ i {
 
 table td {
   vertical-align: middle !important;
-}
-
-table {
-  -webkit-box-shadow: 0 8px 6px -6px black;
-     -moz-box-shadow: 0 8px 6px -6px black;
-          box-shadow: 0 8px 6px -6px black;
 }
